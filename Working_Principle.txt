@@ -1,9 +1,27 @@
-Working Principle
+Read this thoroughly
 
-To use our android phone work as a camera we are using an application “IP Webcam ( You can download the app on you android phone from here https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en). The video taken from the camera can be seen live from http://<ip address : port_name >. 
+Working Principle : 
 
-Now in order to extract a specific color from the video I decide to use MATLAB software which comes handy in these video processing kind of things. First of all we are receiving the video frame by frame from the above mentioned ip address. Then we are converting the received RGB image frame to binary image because it is easier to work on only two color instead on an RGB image. In this binary image all the red color is shown as white regions and remaining color are shown as black regions. Now to calculate the centroid, perimeter (P) and area (A) of the white region using MATLAB functions. 
+To use our android phone work as a camera we are using an application “IP Webcam ( You can download the app on you android phone from
+here https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en). The video taken from the camera can be seen live from http
+://<ip address : port_name >. 
 
-Now in order to make our robot to follow only circular object we have used the fact that for circular object value of 4*π*Area/perimeter^2 is equals to 1 and for all other geometry it is other than 1. Thus if the this value is near to 1 then only we follow the object otherwise not and wait until we get a circular object. Thus till now we are able to receive video, detect red colored round objects.
+Now in order to extract a specific color from the video I decide to use MATLAB software which comes handy in these video processing kind 
+of things. First of all we are receiving the video frame by frame from the above mentioned ip address. Then we are converting the 
+received RGB image frame to binary image because it is easier to work on only two color instead on an RGB image. In this binary image all
+the red color is shown as white regions and remaining color are shown as black regions. Now to calculate the centroid, perimeter (P) and 
+area (A) of the white region using MATLAB functions. 
 
-Now, the next thing is when we have to move left, right, forward and stop. For this we first find the coordinates of the of the center point of the window on which binary image is playing. Now, we divide this window into three regions (Left, Right and Center) based on the pixel on X axis. In our project pixel from 0px to 270px is considered as left region, 271px to 370px is the center region and from 371px to 640px is the right region. Now if the detected ball is found to be present in left region then we send the signal “L” to Arduino via COM3 port, then the Arduino with the help of Motor Driver (L293D) turns the robot left. Same thing happens if the robot is present in center and right region. Now, to make the robot stop if the ball is too close, we use the area of the white circular region, if this area is greater than the threshold area (in our project we have taken threshold area as 29000px sq.) then we send signal “B” to Arduino and make the robot stop.
+Now in order to make our robot to follow only circular object we have used the fact that for circular object value of 
+4*π*Area/perimeter^2 is equals to 1 and for all other geometry it is other than 1. Thus if the this value is near to 1 then only we 
+follow the object otherwise not and wait until we get a circular object. Thus till now we are able to receive video, detect red colored 
+round objects.
+
+Now, the next thing is when we have to move left, right, forward and stop. For this we first find the coordinates of the of the center 
+point of the window on which binary image is playing. Now, we divide this window into three regions (Left, Right and Center) based on the
+pixel on X axis. In our project pixel from 0px to 270px is considered as left region, 271px to 370px is the center region and from 371px
+to 640px is the right region. Now if the detected ball is found to be present in left region then we send the signal “L” to Arduino via 
+COM3 port, then the Arduino with the help of Motor Driver (L293D) turns the robot left. Same thing happens if the robot is present in 
+center and right region. Now, to make the robot stop if the ball is too close, we use the area of the white circular region, if this area
+is greater than the threshold area (in our project we have taken threshold area as 29000px sq.) then we send signal “B” to Arduino and
+make the robot stop.
