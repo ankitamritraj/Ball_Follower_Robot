@@ -1,4 +1,4 @@
-	Required Components:
+Required Components:
 
 •	ARDUINO UNO: 				Our microcontroller to perform the logical operation.
 •	H-Bridge (L293D):  			To control the motion of the two DC motor.
