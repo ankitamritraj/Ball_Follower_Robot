@@ -1,6 +1,6 @@
 # Ball_Follower_Robot
 
-Going through this repository in the following order for easy understandig :
+Go through this repository in the following order for easy understandig :
 
 1. Read components required (Components_Required.txt)
 2. Operating Reqirement     (Operating_Requirement.txt) 
