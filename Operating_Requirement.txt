@@ -1,3 +1,10 @@
 How to operate:
 
-First connect the Laptop to the Arduino with the serial cable(to make the communication between Laptop and the Arduino wireless you can use a Bluetooth module ). Now start the IP webcam application on your smartphone and make sure that both laptop and the mobile phone are connected via the same wi-fi network ( Suggestion: To avoid lags in video processing you can either connect to very high speed wi-fi netword or you can make hotspot from your mobile phone (DO NOT turn mobile data) and connect your laptop to the same). After this you can start streaming video on your phone, now before running the MATLAB code make sure that url showing the phone and what you have used in the MATLAB code is same. And yes that's it and our robot is in action. You can see on the laptop screen a window appear which shows red color as white spots and other colors as black. In this project I had decided to detect a red colored round objects only, however we can detect any other color ball too by just feeding in the RGB value of the required color.
+First connect the Laptop to the Arduino with the serial cable(to make the communication between Laptop and the Arduino wireless you can
+use a Bluetooth module ). Now start the IP webcam application on your smartphone and make sure that both laptop and the mobile phone are
+connected via the same wi-fi network ( Suggestion: To avoid lags in video processing you can either connect to very high speed wi-fi
+netword or you can make hotspot from youkjr mobile phone (DO NOT turn mobile data) and connect your laptop to the same). After this you
+can start streaming video on your phone, now before running the MATLAB code make sure that url showing the phone and what you have used
+in the MATLAB code is same. And yes that's it and our robot is in action. You can see on the laptop screen a window appear which shows
+red color as white spots and other colors as black. In this project I had decided to detect a red colored round objects only, however we
+can detect any other color ball too by just feeding in the RGB value of the required color.

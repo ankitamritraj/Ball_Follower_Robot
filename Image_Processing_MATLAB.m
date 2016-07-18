@@ -1,11 +1,12 @@
 
-%--------------------------------------------------------------------------MATLAB VIDEO PROCESSING-------------------------------------------------------------%
+%--------------------------------------------------------MATLAB VIDEO PROCESSING------------------------------------------------------%
  
 
 ser=serial('COM3','Baudrate',9600);  
 fopen(ser);                                     % opens the COM3 channel port so that we can send the processed data to arduino;
                                                 % The baud rate is the %rate at which information is transferred in a communication 
-                                                % channel,"9600 baud" means that the serial port is capable of transferring a maximum of 9600 bits per second
+                                                % channel,"9600 baud" means that the serial port is capable of transferring a maximum
+                                                % of 9600 bits per second
                                       
                                       
 url = 'http://10.8.18.95:8080/shot.jpg';        % 'url' will recieve video from the shown link                  
@@ -37,8 +38,9 @@ while(1)
                                                % components (objects)that have size fewer than 8 pixels.
                                                % bwareaopen will smoothen the edge of the object.
     
-    im5 = imfill(im4,'holes');                 % imfill(BW,'holes') fills holes in the binary image im4. A  hole is a set of background
-                                               %  pixels that cannot be reached % by filling in the  background from the edge of the image. 
+    im5 = imfill(im4,'holes');                 % imfill(BW,'holes') fills holes in the binary image im4. A  hole is  
+                                               % a set of background pixels that cannot be reached % by filling in the 
+                                               % background from the edge of the image. 
     
     [B,L] = bwboundaries(im5,'noholes');       % bwboundaries() traces the boundary of Red color object 
 
@@ -87,7 +89,8 @@ while(1)
    if(metric >= circle_threshold && metric<=1.0)  % if the dectected object is nearly circular then only this segment will work
         
         display(metric);
-        if (area_cir > area_threshold)            % if ball is to close to close i.e area of cirle is greater than threshold area of cirle
+        if (area_cir > area_threshold)            % if ball is to close to close i.e area of cirle is greater 
+                                                  %than threshold area of cirle
 
             display('B');                         % display B on command Window
 
